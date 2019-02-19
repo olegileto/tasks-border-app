@@ -6,6 +6,7 @@ class Card extends Component{
             <div className="Card">
                 <h3 className="card-title">{this.props.title}</h3>
                 <p className="card-description">{this.props.description}</p>
+                <button className="remove-card-btn" onClick={this.props.removeCard}>Remove</button>
             </div>
         )
     }

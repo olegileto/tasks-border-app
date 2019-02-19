@@ -1,0 +1,13 @@
+.Lane {
+    display: flex;
+    flex-direction: row;
+}
+
+.Lane .lane {
+    width: 250px;
+    border: 1px solid #ddd;
+}
+
+.Card {
+    border: 1px solid #ddd;
+}
