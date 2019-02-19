@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import './Border.css';
 
 import Lane from '../Lane/Lane'
 

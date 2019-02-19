@@ -1,8 +1,15 @@
 import React, {Component} from 'react';
 import Data from '../../data/data'
+import './Lane.css';
 
 import Card from '../Card/Card';
 import Modal from '../Modal/Modal';
+
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faPlus } from '@fortawesome/free-solid-svg-icons'
+
+library.add(faPlus);
 
 class Lane extends Component {
 
@@ -16,7 +23,7 @@ class Lane extends Component {
                 description: null,
                 priority: null
             },
-            isModal: false,
+            isModal: true,
             laneId: null
         };
 
@@ -36,10 +43,9 @@ class Lane extends Component {
 
         this.setState({
             newCard: newObject,
-            isModal: false
         });
 
-        console.log(data);
+        this.closeModal();
 
     }
 
@@ -66,7 +72,8 @@ class Lane extends Component {
 
     closeModal() {
         this.setState({
-            isModal: false
+            isModal: false,
+            laneId: null
         })
     }
 
@@ -77,10 +84,7 @@ class Lane extends Component {
         newObject['id'] = new Date().getTime();
         newObject[field] = data;
 
-        console.log('data', data);
-        console.log('field', field);
     }
-
 
     render() {
         const data = this.state.data;
@@ -91,21 +95,18 @@ class Lane extends Component {
                     return (
                         <div className="lane" key={key}>
                             <div className="lane-header">
-                                <h2>{lane.title}</h2>
-                                <button onClick={() => this.openModal(lane.id)}>Add</button>
+                                <h2 title={lane.title}>{lane.title}</h2>
+                                <button className="add-card-btn" onClick={() => this.openModal(lane.id)}><FontAwesomeIcon icon="plus" /></button>
                             </div>
 
                             {lane.cards ? lane.cards.map((card, key) => {
                                 return (
                                     <div className="lane-body">
-
                                         <Card
                                             key={key}
-                                            title={card.title}
-                                            description={card.description}
+                                            card={card}
                                             removeCard={() => this.removeCard(card.id)}
                                         />
-
                                     </div>
                                 )
                             }) : null}
@@ -117,8 +118,8 @@ class Lane extends Component {
                     <Modal
                         close={() => this.closeModal()}
                         change={this.handleChange}
+                        done={() => this.addNewCard(this.state.laneId)}
                     />
-
                     : null}
             </div>
         );

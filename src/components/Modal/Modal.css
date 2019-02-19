@@ -7,5 +7,114 @@
     right: 0;
     background-color: rgba(0, 0, 0, .5);
     margin: 0 auto;
+    padding-top: 40px;
 }
 
+.modal-body {
+    margin: 0 auto;
+    width: 665px;
+    background-color: #fff;
+    border-radius: 5px;
+    padding-bottom: 50px;
+    padding-top: 25px;
+}
+
+form {
+    width: 560px;
+    margin: 0 auto;
+}
+
+form textarea {
+    width: 560px;
+    height: 200px;
+    padding-top: 5px;
+    padding-left: 5px;
+    font-size: 15px;
+    color: #434040;
+    outline: none;
+    resize: none;
+    border-radius: 5px;
+    border: 1px solid #e4e1e1;
+}
+
+form textarea:focus {
+    border: 1px solid #67dfd4;
+}
+
+form input {
+    width: 560px;
+    height: 50px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    border: 1px solid #e4e1e1;
+    font-size: 15px;
+    padding-left: 5px;
+    color: #434040;
+    outline: none;
+}
+
+form input:focus {
+    border: 1px solid #67dfd4;
+}
+
+form select {
+    width: 350px;
+    height: 50px;
+    margin-bottom: 15px;
+    background-color: #fff;
+    border-radius: 5px;
+    border: 1px solid #e4e1e1;
+    font-size: 15px;
+    color: #434040;
+    outline: none;
+}
+
+form select:focus {
+    border: 1px solid #67dfd4;
+}
+
+label {
+    text-align: left;
+    text-transform: uppercase;
+    color: #b3afaf;
+    font-weight: lighter;
+    display: block;
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+.modal-body h2 {
+    margin-left: 50px;
+    color: #7c7a7a;
+    font-size: 25px;
+}
+
+form button {
+    width: 150px;
+    height: 40px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    color: #fff;
+    text-transform: uppercase;
+
+    -webkit-transition: opacity .3s;
+    -moz-transition: opacity .3s;
+    -ms-transition: opacity .3s;
+    -o-transition: opacity .3s;
+    transition: opacity .3s;
+}
+
+form button:hover {
+    opacity: .7;
+}
+
+.done {
+    background-color: #67dfd4;
+    margin-right: 15px;
+}
+
+.close-modal {
+    background-color: #df6783;
+}
