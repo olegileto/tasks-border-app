@@ -98,6 +98,7 @@ form button {
     font-size: 14px;
     color: #fff;
     text-transform: uppercase;
+    outline: none;
 
     -webkit-transition: opacity .3s;
     -moz-transition: opacity .3s;

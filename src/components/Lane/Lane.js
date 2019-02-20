@@ -23,7 +23,7 @@ class Lane extends Component {
                 description: null,
                 priority: null
             },
-            isModal: true,
+            isModal: false,
             laneId: null
         };
 
@@ -38,11 +38,21 @@ class Lane extends Component {
     addNewCard(id) {
 
         const {data, newCard} = this.state;
+        const fields = {
+            id: null,
+            title: null,
+            description: null,
+            priority: null
+        };
+
         const newLane = data.map(lane => lane.id === id ? lane.cards.push(newCard) : null);
         const newObject = newCard;
 
         this.setState({
-            newCard: newObject,
+            newCard: {
+                newObject: newObject,
+                fields: fields
+            },
         });
 
         this.closeModal();
@@ -97,6 +107,7 @@ class Lane extends Component {
                             <div className="lane-header">
                                 <h2 title={lane.title}>{lane.title}</h2>
                                 <button className="add-card-btn" onClick={() => this.openModal(lane.id)}><FontAwesomeIcon icon="plus" /></button>
+                                <span className="quantity">{lane.cards.length}</span>
                             </div>
 
                             {lane.cards ? lane.cards.map((card, key) => {
