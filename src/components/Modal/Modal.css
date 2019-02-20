@@ -19,12 +19,12 @@
     padding-top: 25px;
 }
 
-form {
+.Modal form {
     width: 560px;
     margin: 0 auto;
 }
 
-form textarea {
+.Modal form textarea {
     width: 560px;
     height: 200px;
     padding-top: 5px;
@@ -37,11 +37,11 @@ form textarea {
     border: 1px solid #e4e1e1;
 }
 
-form textarea:focus {
+.Modal form textarea:focus {
     border: 1px solid #67dfd4;
 }
 
-form input {
+.Modal form input {
     width: 560px;
     height: 50px;
     margin-bottom: 15px;
@@ -53,11 +53,11 @@ form input {
     outline: none;
 }
 
-form input:focus {
+.Modal form input:focus {
     border: 1px solid #67dfd4;
 }
 
-form select {
+.Modal form select {
     width: 350px;
     height: 50px;
     margin-bottom: 15px;
@@ -69,7 +69,7 @@ form select {
     outline: none;
 }
 
-form select:focus {
+.Modal form select:focus {
     border: 1px solid #67dfd4;
 }
 
@@ -89,7 +89,7 @@ label {
     font-size: 25px;
 }
 
-form button {
+.Modal form button {
     width: 150px;
     height: 40px;
     border-radius: 5px;
@@ -107,7 +107,7 @@ form button {
     transition: opacity .3s;
 }
 
-form button:hover {
+.Modal form button:hover {
     opacity: .7;
 }
 

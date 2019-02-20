@@ -9,7 +9,7 @@ class Modal extends Component{
                     <h2>Add a new Task</h2>
                     <form>
                         <label>Title</label>
-                        <input name="title" placeholder="Enter title" onChange={(e) => this.props.change(e.target.value, 'title')}/><br/>
+                        <input type="text" name="title" placeholder="Enter title" onChange={(e) => this.props.change(e.target.value, 'title')}/><br/>
 
                         <label>Description</label>
                         <textarea name="description" placeholder="Enter description" onChange={(e) => this.props.change(e.target.value, 'description')}>

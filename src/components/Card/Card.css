@@ -30,7 +30,8 @@
     border: 1px solid #ffa8a8
 }
 
-.remove-card-btn {
+.remove-card-btn,
+.edit-card {
     text-align: right;
     cursor: pointer;
     color: #333;
@@ -39,6 +40,10 @@
     border: none;
     padding: 0;
     outline: none;
+}
+
+.edit-card {
+    margin-right: 5px;
 }
 
 h3 {

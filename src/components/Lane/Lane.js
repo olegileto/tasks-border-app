@@ -24,7 +24,7 @@ class Lane extends Component {
                 priority: null
             },
             isModal: false,
-            laneId: null
+            laneId: null,
         };
 
         this.addNewCard = this.addNewCard.bind(this);
@@ -122,7 +122,6 @@ class Lane extends Component {
                                 )
                             }) : null}
                         </div>)
-
                 })}
 
                 {this.state.isModal ?
