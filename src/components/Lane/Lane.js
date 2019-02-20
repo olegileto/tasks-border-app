@@ -5,9 +5,9 @@ import './Lane.css';
 import Card from '../Card/Card';
 import Modal from '../Modal/Modal';
 
-import { library } from '@fortawesome/fontawesome-svg-core'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faPlus } from '@fortawesome/free-solid-svg-icons'
+import {library} from '@fortawesome/fontawesome-svg-core'
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
+import {faPlus} from '@fortawesome/free-solid-svg-icons'
 
 library.add(faPlus);
 
@@ -32,6 +32,7 @@ class Lane extends Component {
         this.openModal = this.openModal.bind(this);
         this.closeModal = this.closeModal.bind(this);
         this.handleChange = this.handleChange.bind(this);
+        this.editCard = this.editCard.bind(this);
 
     }
 
@@ -96,6 +97,21 @@ class Lane extends Component {
 
     }
 
+    editCard(id) {
+        let changedCard;
+        this.state.data.map(lane => {
+            changedCard = lane.cards.map(card => {
+                if (card.id === id) {
+                    card.title = 'test'
+                }
+                return card;
+            })
+        });
+
+        this.child.closeEditFields();
+        console.log(changedCard);
+    }
+
     render() {
         const data = this.state.data;
 
@@ -106,7 +122,9 @@ class Lane extends Component {
                         <div className="lane" key={key}>
                             <div className="lane-header">
                                 <h2 title={lane.title}>{lane.title}</h2>
-                                <button className="add-card-btn" onClick={() => this.openModal(lane.id)}><FontAwesomeIcon icon="plus" /></button>
+                                <button className="add-card-btn" onClick={() => this.openModal(lane.id)}>
+                                    <FontAwesomeIcon icon="plus"/>
+                                </button>
                                 <span className="quantity">{lane.cards.length}</span>
                             </div>
 
@@ -117,6 +135,7 @@ class Lane extends Component {
                                             key={key}
                                             card={card}
                                             removeCard={() => this.removeCard(card.id)}
+                                            done={this.editCard}
                                         />
                                     </div>
                                 )
