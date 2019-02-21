@@ -97,19 +97,23 @@ class Lane extends Component {
 
     }
 
-    editCard(id) {
-        let changedCard;
-        this.state.data.map(lane => {
-            changedCard = lane.cards.map(card => {
+    editCard(id, title, description, priority) {
+        let test = this.state.data.map(lane => {
+            lane.cards.map(card => {
+                this.setState({});
                 if (card.id === id) {
-                    card.title = 'test'
+                    card.title = title;
+                    card.description = description;
+                    card.priority = priority;
                 }
                 return card;
-            })
+            });
+            return lane;
         });
 
-        this.child.closeEditFields();
-        console.log(changedCard);
+        this.setState({
+            data: test
+        })
     }
 
     render() {

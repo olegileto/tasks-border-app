@@ -1,13 +1,13 @@
 import React, {Component} from 'react';
 import './Card.css';
 
-import { library } from '@fortawesome/fontawesome-svg-core'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faTrashAlt, faEdit } from '@fortawesome/free-solid-svg-icons'
+import {library} from '@fortawesome/fontawesome-svg-core'
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
+import {faTrashAlt, faEdit} from '@fortawesome/free-solid-svg-icons'
 
 library.add(faTrashAlt, faEdit);
 
-class Card extends Component{
+class Card extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -57,6 +57,11 @@ class Card extends Component{
         })
     }
 
+    streak(id) {
+        this.props.done(id, this.state.title, this.state.description, this.state.pr);
+        this.closeEditFields();
+    }
+
     render() {
         const cardPriority = this.props.card.priority;
         const editFields = (<div>
@@ -76,12 +81,12 @@ class Card extends Component{
                     <option value="4">4</option>
                 </select>
 
-                <button className="done-edit-card" onClick={(e) => this.props.done(this.props.card.id)}>Done</button>
+                <button className="done-edit-card" onClick={(e) => this.streak(this.props.card.id)}>Done</button>
                 <button className="close-edit-card" onClick={this.closeEditFields}>Close</button>
             </div>
         </div>);
 
-        return(
+        return (
             <div className={`Card ${this.state.priority[cardPriority]}`}>
                 {this.state.isEditFields
                     ? editFields

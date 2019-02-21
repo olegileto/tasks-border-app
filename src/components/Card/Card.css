@@ -56,3 +56,56 @@ p {
     font-size: 15px;
     text-align: left;
 }
+
+.EditFields {
+    width: 150px;
+    margin: 0 auto;
+}
+
+.EditFields input {
+    width: 150px;
+    height: 25px;
+    border-radius: 3px;
+    border: 1px solid #333;
+    background-color: #fff;
+    color: #333;
+    padding-left: 3px;
+    outline: none;
+    margin-bottom: 7px;
+    margin-top: 10px;
+}
+
+.EditFields textarea {
+    width: 150px;
+    height: 50px;
+    border-radius: 3px;
+    border: 1px solid #333;
+    background-color: #fff;
+    color: #333;
+    padding-left: 3px;
+    padding-top: 3px;
+    outline: none;
+    resize: none;
+    margin-bottom: 7px;
+}
+
+.EditFields select {
+    width: 157px;
+    height: 25px;
+    border-radius: 3px;
+    border: 1px solid #333;
+    background-color: #fff;
+    margin-bottom: 7px;
+}
+
+.EditFields button {
+    outline: none;
+    width: 50px;
+    height: 25px;
+    background-color: #fff;
+    border-radius: 3px;
+    border: 1px solid #333;
+    color: #333;
+    margin-left: 7px;
+    cursor: pointer;
+}
